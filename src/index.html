@@ -7,8 +7,55 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 </head>
 <body>
-  <app-root></app-root>
+  
+    <app-root></app-root>
+ 
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+  
+  <script>
+    $(function(){
+      $("#nav-icon").on("click", function(e){
+        $(this).toggleClass("open");
+        $("nav ul:last-of-type li").slideToggle();
+
+    });
+    
+    $(".description").addClass("animated fadeInLeft");
+    $(window).on("scroll", function(){
+         
+         let $offset = $(".right-multisection").offset();
+         let $offset2 = $(".left-multisection").offset();
+         let $offset3 = $(".blocks-container").offset();
+       
+         if($(this).scrollTop() > $offset.top - 700 ){
+           $(".right-multisection").addClass("animated fadeInLeft");
+         }else if($(this).scrollTop() > $offset2.top - 600){
+          $(".left-multisection").addClass("animated fadeInLeft");
+         }else if($(this).scrollTop() > $offset3.top - 400){
+          $(".blocks-container").addClass("animated fadeInLeft");
+         }
+          else{
+          $(".right-multisection").removeClass("animated fadeInLeft");
+          $(".left-multisection").removeClass("animated fadeInLeft");
+          $(".blocks-container").removeClass("animated fadeInLeft");
+        
+         }
+
+
+       }); 
+
+
+    });
+  </script>    
+      
 </body>
 </html>
